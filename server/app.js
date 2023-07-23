@@ -31,10 +31,14 @@ socketRealtime.connect(server);
 // }
 
 // cors module configuration
+// const corsOptions = {
+//   origin: 'https://sudo-delivery-1r5t.vercel.app',
+//   exposedHeaders: ["x-auth-token"],
+//   optionsSuccessStatus: 200
+// };
+
 const corsOptions = {
-  origin: 'https://sudo-delivery-1r5t.vercel.app',
-  exposedHeaders: ["x-auth-token"],
-  optionsSuccessStatus: 200
+  exposedHeaders: ["x-auth-token"]
 };
 app.use(cors(corsOptions));
 
