@@ -42,6 +42,9 @@ app.use(morgan("tiny"));
 
 
 // Routes
+app.get("/", (req, res) => {
+  res.send("hello")
+})
 app.use("/api", foods_route);
 app.use("/api/users", users_route);
 app.use("/api/users", order_route);
