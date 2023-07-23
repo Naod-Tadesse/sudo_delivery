@@ -56,5 +56,5 @@ app.use("/api", profiles_route);
 
 //static files
 app.use("/api", express.static("storage"));
-
+module.exports = app;
 module.exports = server;
