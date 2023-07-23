@@ -35,9 +35,9 @@ const corsOptions = {
   origin: 'https://sudo-delivery-1r5t.vercel.app',
   exposedHeaders: ["x-auth-token"],
 };
+app.use(cors(corsOptions));
 
 app.use(express.urlencoded({ extended: true }));
-app.use(cors(corsOptions));
 app.use(express.json());
 app.use(morgan("tiny"));
 
