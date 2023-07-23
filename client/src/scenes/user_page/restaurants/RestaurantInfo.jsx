@@ -42,7 +42,7 @@ const RestaurantInfo = () => {
                     <Text textAlign={"center"}  marginBottom={"10px"} fontSize={"lg"}>{restaurantData.name}</Text>
                     <Box>
                         <Box width={"100%"} margin={"auto"} height={"350px"}>
-                            <Image src={ restaurantData.profilePicture ? `http://${MainURL}:4000/api/restaurantProfileImages/${restaurantData.profilePicture}`:`/restaurantDefault.jpg`} height={"100%"} fit={"cover"} width={"100%"} />
+                            <Image src={ restaurantData.profilePicture ? `${MainURL}/api/restaurantProfileImages/${restaurantData.profilePicture}`:`/restaurantDefault.jpg`} height={"100%"} fit={"cover"} width={"100%"} />
                         </Box>
                         <SimpleGrid spacing={2} minChildWidth={"200px"} marginTop={"30px"}>
                             <HStack>

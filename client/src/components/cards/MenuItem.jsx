@@ -18,7 +18,7 @@ const MenuItem = ({ _id, name, image, ingredients, price, description}) => {
         </Flex>
       </CardHeader>
       <Box height={"150px"} display={"flex"} alignItems={"center"} bg={"gray.100"} overflow={"hidden"}>
-          <Image src={`http://${MainURL}:4000/api/foodImage/${image[0]}`} width={"100%"} height={"100%"} fit={"cover"}/>
+          <Image src={`${MainURL}/api/foodImage/${image[0]}`} width={"100%"} height={"100%"} fit={"cover"}/>
       </Box>
       <CardBody color="gray.400" fontSize="13px">
           <HStack spacing={0}>

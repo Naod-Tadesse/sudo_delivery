@@ -16,10 +16,10 @@ export const ImageInput = ({selectFiles,removeImage,preview,type})=>{
             
             <Box width={"200px"} border={`dashed 2px ${colors.sudoGray[100]}`} padding={"3px"} borderRadius={"5px"}>
                 {type === "user" ?
-                    <Image src={preview[0] || preview === "deleted" ? preview[0] : `http://${MainURL}:4000/api/userProfileImages/${user.profilePicture}`} 
+                    <Image src={preview[0] || preview === "deleted" ? preview[0] : `${MainURL}/api/userProfileImages/${user.profilePicture}`} 
                     alt="none here maaaaan" height={"100%"} fit={"cover"} bg={"sudoGray.100"} borderRadius={"3px"}/>
                     :
-                    <Image src={preview[0] ? preview[0] : `http://${MainURL}:4000/api/restaurantProfileImages/${restaurant.profilePicture}`} 
+                    <Image src={preview[0] ? preview[0] : `${MainURL}/api/restaurantProfileImages/${restaurant.profilePicture}`} 
                     alt="none here maaaaan" height={"100%"} fit={"cover"} bg={"sudoGray.100"} borderRadius={"3px"}/>
             }
             </Box>

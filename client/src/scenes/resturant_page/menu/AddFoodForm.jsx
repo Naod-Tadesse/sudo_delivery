@@ -181,7 +181,7 @@ const AddFood = ({editing,foodName,foodPrice,foodIngredients,foodImages,foodId,f
                         {/* when editing a menu the already existing images come from the backend and the new images come from the users device  */}
 
                       {preview.slice(0,previewLength).map((image,idx)=>
-                          <Image src={`http://${MainURL}:4000/api/foodImage/${image}`} alt="none here" width={"25%"} height={"70px"} key={idx} id={idx} 
+                          <Image src={`${MainURL}/api/foodImage/${image}`} alt="none here" width={"25%"} height={"70px"} key={idx} id={idx} 
                             onClick={()=>{removeImage(idx)
                             setPreviewLength( previewLength === 0 ? 0 : previewLength-1)}
                           } fit={"cover"}/>

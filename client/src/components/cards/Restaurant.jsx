@@ -16,7 +16,7 @@ const Restaurant = ({id,restaurantData}) =>{
                 </Flex>
             </CardHeader>
             <Box height={"150px"} display={"flex"} alignItems={"center"} bg={"gray.100"} overflow={"hidden"}>
-                <Image src={restaurantData.profilePicture ? `http://${MainURL}:4000/api/restaurantProfileImages/${restaurantData.profilePicture}`:`/restaurantDefault.jpg`} 
+                <Image src={restaurantData.profilePicture ? `${MainURL}/api/restaurantProfileImages/${restaurantData.profilePicture}`:`/restaurantDefault.jpg`} 
                 width={"100%"} height={"100%"} fit={"cover"}/>
             </Box>
             <Spacer/>

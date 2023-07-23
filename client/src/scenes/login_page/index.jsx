@@ -7,8 +7,6 @@ import {Box,FormControl,FormLabel,Button,Select,Text} from "@chakra-ui/react";
 
 import useShowToast from "../../hooks/useShowToast";
 
-import UserForm from "./UserForm";
-import ResturantForm from "./ResturantForm";
 import AuthForm from "./AuthForm";
 import {setLogin} from "../../slices/authSlice";
 
@@ -27,7 +25,7 @@ const Login = ()=>{
 
     const login = (formData)=>{
         const urlType = userType === "user" ? "users" : "restaurants"
-        axios.post(`http://${MainURL}:4000/api/auth/${urlType}/login`,formData)
+        axios.post(`${MainURL}/api/auth/${urlType}/login`,formData)
         .then(res=>{
 
             dispatch(setLogin({
@@ -47,7 +45,7 @@ const Login = ()=>{
 
     const register = (formData)=>{
         const urlType = userType === "user" ? "users" : "restaurants"
-        axios.post(`http://${MainURL}:4000/api/${urlType}/register`,formData)
+        axios.post(`${MainURL}/api/${urlType}/register`,formData)
         .then(res=>{
             dispatch(setLogin({
                 user :isUser ? res.data:null,

@@ -36,7 +36,7 @@ const Navbar = ()=>{
                     <HStack>
                       <Text color={"cotton"}>{user.username}</Text>
                       <MenuButton borderRadius={0}>
-                        <Avatar name={user.username} src={`http://${MainURL}:4000/api/userProfileImages/${user.profilePicture}`} size="md" bg={"cotton"} color={"sudoRed.900"}>
+                        <Avatar name={user.username} src={`${MainURL}/api/userProfileImages/${user.profilePicture}`} size="md" bg={"cotton"} color={"sudoRed.900"}>
                             <AvatarBadge width={"1em"} height={"1em"} bg={"sudoGreen.500"} borderColor={"sudoRed.900"}>
 
                             </AvatarBadge>

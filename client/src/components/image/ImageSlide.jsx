@@ -42,7 +42,7 @@ const ImageSlide = ({images}) =>{
                     animate={{opacity:1,scale:1}}
                     transition={{type:"tween"}}
                     width={"100%"}
-                    src={`http://${MainURL}:4000/api/foodImage/${images[page%images.length]}`} 
+                    src={`${MainURL}/api/foodImage/${images[page%images.length]}`} 
                     />
                 </Box> 
                 <Box onClick={next}><IconButton variant={"link"}><ChevronRightIcon  boxSize={6}/></IconButton></Box>
