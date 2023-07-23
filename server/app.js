@@ -23,12 +23,12 @@ const order_route = require("./routes/order_route");
 socketRealtime.connect(server);
 
 //checking if env variables present
-for (item in customEnv) {
-  if (!config.get(item)) {
-    console.log(`FATAL ERROR: ${item} is not defined.`);
-    process.exit(1);
-  }
-}
+// for (item in customEnv) {
+//   if (!config.get(item)) {
+//     console.log(`FATAL ERROR: ${item} is not defined.`);
+//     process.exit(1);
+//   }
+// }
 
 // cors module configuration
 const corsOptions = {
