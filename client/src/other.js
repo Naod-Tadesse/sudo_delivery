@@ -1,1 +1,1 @@
-export const MainURL = 'https://sudo-delivery.vercel.app'
+export const MainURL = 'http://localhost:4000'

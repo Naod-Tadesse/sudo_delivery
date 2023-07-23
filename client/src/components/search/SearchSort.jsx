@@ -12,7 +12,6 @@ const SearchSort = ()=>{
         dispatch(setSearch({
             phrase:word
         }))
-        console.log("searching for "+ word)
     }
     const handleSort = (sort)=>{
         dispatch(setSort({

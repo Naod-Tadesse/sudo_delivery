@@ -59,7 +59,7 @@ const Food = ({id,foodData}) =>{
             
                 <Box display={"flex"} justifyContent={"space-between"} marginTop={"10px"}>
                     <ButtonDefault action={()=>addItem(foodData)} text={"Add to cart"}/>
-                    <Text color={"sudoRed.900"} _hover={{color:"sudoRed.200"}}><Link to={`/foods/${foodData.name}`} state={{foodData}}>see more</Link></Text>  
+                    <Text color={"sudoRed.900"} _hover={{color:"sudoRed.200"}}><Link to={`/foods/${id}`} state={{foodData}}>see more</Link></Text>  
                 </Box>
             </CardBody>
         </MotionCard>    

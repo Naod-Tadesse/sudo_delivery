@@ -3,7 +3,6 @@ import { Icons } from "../../../components/icon/Icon"
 
 const Order = ({data})=>{
 
-    console.log("this is the order cart",data)
     return(
         <Box bg={"sudoRed.100"} mt={5} boxShadow={"lg"} padding={"10px"}>
             <HStack justifyContent={"flex-end"} marginBottom={"15px"}><Text>{data.createdAt}</Text></HStack>

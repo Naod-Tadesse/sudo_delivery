@@ -19,7 +19,6 @@ const Foods = () => {
 
   useEffect(() => {
     request(`restaurants/foods/getFoods?pageNumber=${page}&pageSize=${5}&sort=${sort}&search=${search}`,"GET",data)
-    .catch(err=>console.log(err.response))
   }, [page,search,sort]);
 
   useEffect(()=>{

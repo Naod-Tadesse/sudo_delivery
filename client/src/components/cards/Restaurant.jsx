@@ -33,7 +33,7 @@ const Restaurant = ({id,restaurantData}) =>{
                 </HStack>
                 
                 <Spacer/>
-                <Text color={"sudoRed.900"} _hover={{color:"sudoRed.200"}}><Link to={`/restaurants/${restaurantData.name}`} state={{restaurantData}}>see more</Link></Text>   
+                <Text color={"sudoRed.900"} _hover={{color:"sudoRed.200"}}><Link to={`/restaurants/${id}`} state={{restaurantData}}>see more</Link></Text>   
             </CardBody>
         </Card>
         

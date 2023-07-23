@@ -12,10 +12,9 @@ const Home = ()=>{
     
     useEffect(()=>{
         requestFood(`user/foods/getFoods?pageNumber=${1}&pageSize=${5}`,"GET")
-        .catch(error=>console.log(error.response))
 
         requestRes(`users/restaurants/getAllRestaurants?pageNumber=${1}&pageSize=${5}`,"GET")
-        .catch(error=>console.log(error.response))
+
     },[])
     
     return(

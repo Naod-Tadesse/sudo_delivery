@@ -16,7 +16,7 @@ const NavMenu = () =>{
             {isSmall &&
             
             <Flex borderBottomWidth={"1px"} justifyContent={"space-around"} alignItems={"baseline"}>
-                <NavLink style={defaultStyle} to="restaurant">Menu</NavLink>
+                <NavLink style={defaultStyle} to="/restaurant">Menu</NavLink>
                 <NavLink style={defaultStyle} to="orders">Orders</NavLink>
                 <NavLink style={defaultStyle} to="settings"><SettingsIcon/></NavLink>
             </Flex>}
@@ -25,7 +25,7 @@ const NavMenu = () =>{
             <Flex p={0} borderBottomWidth={"1px"} justifyContent={"space-between"} alignItems={"baseline"}>
                 <Box width={"50%"} display={"flex"} margin={"auto"}>
                     <Flex width={{base:"60%",sm:"40%"}} justifyContent="space-between">
-                        <NavLink to={restaurant.name} style={defaultStyle}>Menu</NavLink>
+                        <NavLink to="/restaurant" style={defaultStyle}>Menu</NavLink>
                         <NavLink style={defaultStyle} to="orders">Orders</NavLink>
                         
                     </Flex>
@@ -40,7 +40,7 @@ const NavMenu = () =>{
             <Flex p={0} borderBottomWidth={"1px"} justifyContent={"space-between"} alignItems={"baseline"}>
                 <Box width={"50%"} display={"flex"} margin={"auto"}>
                     <Flex width={{base:"60%",sm:"40%"}} justifyContent="flex-start">
-                        <NavLink to={restaurant.name} style={defaultStyle}>Menu</NavLink>
+                        <NavLink to="/restaurant" style={defaultStyle}>Menu</NavLink>
                     </Flex>
                     <Spacer/>
                     <Flex width={{base:"40%",sm:"20%"}} justifyContent={"flex-end"}>

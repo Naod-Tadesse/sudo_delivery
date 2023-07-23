@@ -23,13 +23,11 @@ const Cart = () =>{
             return {foodId:item.id,quantity:item.amount}
         })
         ,userId:user._id}
-        console.log(data)
         request("users/order","POST",data)
         .then(res=>{
             showToast("success","order successful","success")
         })
         .catch(err=>{
-            console.log(err.response)
             showToast("failed","order failed","error")
         })
 

@@ -42,11 +42,11 @@ const App = ()=> {
                     </Route>
 
                     <Route path='/restaurant' element={isAuth && !isUser? <RestaurantPageLayout/>:<Navigate to="/auth"/>}>
-                        <Route path=":restaurantId" element={<Menu />} />
+                        <Route index element={<Menu />} />
                         <Route path="settings" element={<RestaurantSettings />} />
                         <Route path="orders" element={<Orders/>}/>
                     </Route>
-                    <Route path="/auth" element={isAuth ? <Navigate to={isUser ? "/" : `/restaurant/${restaurant.name}` }/> : <LoginPage/>}/>
+                    <Route path="/auth" element={isAuth ? <Navigate to={isUser ? "/" : `/restaurant` }/> : <LoginPage/>}/>
                     <Route path='*'  element={<Error/>}/>
                 </Routes>
             </div>

@@ -24,7 +24,6 @@ const DeleteModal = ({id,type})=>{
             navigate(0)
         })
         .catch(error=>{
-            console.log(error.response)
             showToast("Failure","failed to delete food","failed")
         })
     }
@@ -46,7 +45,6 @@ const DeleteModal = ({id,type})=>{
                 showToast("success","restaurant deleted successfuly","success")
             })
             .catch(error=>{
-                console.log(error.response)
                 showToast("Failure","failed to delete restaurant","failed")
             })
         }

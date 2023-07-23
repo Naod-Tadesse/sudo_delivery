@@ -38,7 +38,6 @@ const Login = ()=>{
             isUser ? navigate('/') : navigate(`/restaurant/bob`)
         })
         .catch(err=>{
-            console.log(err)
             showToast("Failed","Failed to login","error")
         })
     };
@@ -57,7 +56,6 @@ const Login = ()=>{
         })
         .catch(err=>{
             showToast("Failed","Failed to register","error")
-            console.log(err)
         })
     };
     const handleSelect = (e)=>{

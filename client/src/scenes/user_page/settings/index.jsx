@@ -92,14 +92,8 @@ const Settings = ()=>{
         }
         // formData.append("profilePicture",formState.profilePicture)
         if(editing){
-            console.log("appending")
             formData.append("profilePicture",formState.profilePicture)
         }
-        else{
-            console.log("not appending")
-        }
-
-        console.log(formState)
 
         if(valid){
 
@@ -111,7 +105,6 @@ const Settings = ()=>{
         )
         .catch(error=>{
             showToast("Failed","Failed to save changes","error")
-            console.log(error)
         })
         }
         

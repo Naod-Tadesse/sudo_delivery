@@ -26,8 +26,7 @@ const Restaurants= () => {
     useEffect(()=>{
             
         request(`users/restaurants/getAllRestaurants?pageNumber=${page}&pageSize=${pageSize}&sort=${sort}&search=${search}`,"GET")
-        .then(res=>console.log(res.data))
-        .catch(error=>console.log(error.response)) 
+
 
     },[page,search,sort])
 

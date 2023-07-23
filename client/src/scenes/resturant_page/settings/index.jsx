@@ -57,8 +57,7 @@ const RestaurantSettings = () => {
       password: formState.password,
       description: formState.description
     }
-    console.log(formState)
-    console.log("formState",formState.profilePicture)
+
     const isValid = validate(formState.password === "" ?  restaurantSettingsWithoutPassword : restaurantSettings,formState.password === "" ? formStateWothoutPassword:formState)
 
     const formData = new FormData
@@ -79,7 +78,7 @@ const RestaurantSettings = () => {
         dispatch(setRestaurant({restaurant: res.data,}));
         showToast("update","succsessfully updated","success")
       })
-      .catch(error=>console.log(error.response))
+     
   };
 
 
@@ -87,13 +86,11 @@ const RestaurantSettings = () => {
     
     const prev = []
     
-    console.log("Image",e.target.files[0])
     setFormState({...formState,profilePicture:e.target.files[0]})
     const selected = Array.from(e.target.files)
     const selectedImgs = selected.map(item=>URL.createObjectURL(item))
     for(let item of selectedImgs){
       prev.push(item)
-      console.log("adding to preview",item,preview)
     }
     setPreview(prev)
     setEdited(true)

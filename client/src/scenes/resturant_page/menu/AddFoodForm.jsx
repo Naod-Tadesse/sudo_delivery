@@ -84,7 +84,6 @@ const AddFood = ({editing,foodName,foodPrice,foodIngredients,foodImages,foodId,f
         close()
       })
       .catch(error=>{
-        console.log(error.response)
         showToast("Failed","Failed to create menu item","error")
       })
     }else{

@@ -49,7 +49,7 @@ const RestaurantLayout = () => {
         
     {isLarge &&
         <Grid templateColumns="repeat(9,1fr)"  height={"100vh"}>
-            <GridItem colSpan={2} p={"10px"} height={"90%"}>
+            <GridItem colSpan={2} p={"10px"} height={"100%"}>
                 <Box position={"sticky"} top={"10px"}>
                     <Orders/>
                 </Box>
