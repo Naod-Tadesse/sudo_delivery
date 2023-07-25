@@ -1,1 +1,1 @@
-export const MainURL = 'https://sudo-delivery.vercel.app'
+export const MainURL = 'https://sudo-backend.onrender.com'
