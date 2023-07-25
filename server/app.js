@@ -22,18 +22,14 @@ const order_route = require("./routes/order_route");
 //initiate socket connection with server
 socketRealtime.connect(server);
 
-//checking if env variables present
-// for (item in customEnv) {
-//   if (!config.get(item)) {
-//     console.log(`FATAL ERROR: ${item} is not defined.`);
-//     process.exit(1);
-//   }
-// }
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "https://sudo-delivery-1r5t.vercel.app");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
+checking if env variables present
+for (item in customEnv) {
+  if (!config.get(item)) {
+    console.log(`FATAL ERROR: ${item} is not defined.`);
+    process.exit(1);
+  }
+}
+
 // cors module configuration
 // const corsOptions = {
 //   origin: 'https://sudo-delivery-1r5t.vercel.app',
@@ -42,6 +38,7 @@ app.use(function(req, res, next) {
 // };
 
 const corsOptions = {
+  origin: 'https://sudo-delivery-1r5t.vercel.app',
   exposedHeaders: ["x-auth-token"]
 };
 app.use(cors(corsOptions));
