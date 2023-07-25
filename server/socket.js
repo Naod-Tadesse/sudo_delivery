@@ -16,7 +16,7 @@ class SocketRealtime {
 
     const io = new Server(server, {
       cors: {
-        origin: "http://localhost:5173",
+        origin: "https://sudo-delivery-1r5t.vercel.app",
       },
     });
 
