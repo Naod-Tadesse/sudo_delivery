@@ -22,7 +22,7 @@ const order_route = require("./routes/order_route");
 //initiate socket connection with server
 socketRealtime.connect(server);
 
-checking if env variables present
+//checking if env variables present
 for (item in customEnv) {
   if (!config.get(item)) {
     console.log(`FATAL ERROR: ${item} is not defined.`);
