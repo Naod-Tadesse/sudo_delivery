@@ -29,7 +29,11 @@ socketRealtime.connect(server);
 //     process.exit(1);
 //   }
 // }
-
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "https://sudo-delivery-1r5t.vercel.app");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 // cors module configuration
 // const corsOptions = {
 //   origin: 'https://sudo-delivery-1r5t.vercel.app',
@@ -38,7 +42,6 @@ socketRealtime.connect(server);
 // };
 
 const corsOptions = {
-  origin: "https://sudo-delivery-1r5t.vercel.app",
   exposedHeaders: ["x-auth-token"]
 };
 app.use(cors(corsOptions));
