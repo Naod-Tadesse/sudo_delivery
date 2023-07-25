@@ -30,13 +30,6 @@ for (item in customEnv) {
   }
 }
 
-// cors module configuration
-// const corsOptions = {
-//   origin: 'https://sudo-delivery-1r5t.vercel.app',
-//   exposedHeaders: ["x-auth-token"],
-//   optionsSuccessStatus: 200
-// };
-
 const corsOptions = {
   origin: 'https://sudo-delivery-1r5t.vercel.app',
   exposedHeaders: ["x-auth-token"]
@@ -46,7 +39,6 @@ app.use(cors(corsOptions));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(morgan("tiny"));
-
 
 // Routes
 app.get("/", (req, res) => {
