@@ -4,7 +4,7 @@ export const Icons = (
     {
         icon,
         width=null,
-        color="black",
+        color="rgb(60,60,60)",
         padding="10px",
         margin="0px",
         marginTop="0px",

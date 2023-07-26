@@ -2,11 +2,11 @@ import Joi from "joi-browser";
 
 
 export const restaurantRegisterSchema = {
-    restaurantName: Joi.string().required(),
-    email: Joi.string().required(),
-    restaurantAddress:Joi.string().required(),
-    password: Joi.string().required(),
-    phoneNumber: Joi.number().required()
+    restaurantName: Joi.string().min(2).max(50).required(),
+    email: Joi.string().min(5).max(255).required(),
+    restaurantAddress:Joi.string().min(2,60).required(),
+    password: Joi.string().min(7).max(1024).required(),
+    phoneNumber: Joi.number().min(10).required()
 }
 
 export const loginSchema={
@@ -15,21 +15,21 @@ export const loginSchema={
 }
 
 export const userRegisterSchema = {
-    firstName: Joi.string().required(),
-    lastName: Joi.string().required(),
-    username: Joi.string().required(),
-    email: Joi.string().required(),
-    password: Joi.string().min(7).required(),
-    phoneNumber: Joi.number().required()
+    firstName: Joi.string().min(1).max(50).required(),
+    lastName: Joi.string().min(1).max(50).required(),
+    username: Joi.string().min(1).max(50).required(),
+    email: Joi.string().min(5).max(255).required(),
+    password: Joi.string().min(7).max(1024).required(),
+    phoneNumber: Joi.string().min(10).required()
 };
 
 export const userSettingsSchema = {
-    firstName: Joi.string().required(),
-    lastName: Joi.string().required(),
-    username: Joi.string().required(),
-    email: Joi.string().required(),
-    password: Joi.string().min(7),
-    phoneNumber: Joi.number().required()
+  firstName: Joi.string().min(1).max(50).required(),
+  lastName: Joi.string().min(1).max(50).required(),
+  username: Joi.string().min(1).max(50).required(),
+  email: Joi.string().min(5).max(255).required(),
+  password: Joi.string().min(7).max(1024).required(),
+  phoneNumber: Joi.string().min(10).required()
 }
 export const foodSchema = {
     name: Joi.string().required(),

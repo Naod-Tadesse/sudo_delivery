@@ -63,14 +63,14 @@ const Login = ()=>{
     }
 
     return(
-        <Box display={"flex"} width={"100%"} height={"100vh"} justifyContent={"center"} alignContent={"center"}>
-            <Box width={"800px"} boxShadow={"lg"} margin={"20px"} bg={"white"} padding={"20px"} maxHeight={"800px"}> 
+        <Box display={"flex"} width={"100%"}justifyContent={"center"} alignContent={"center"}>
+            <Box width={"600px"} boxShadow={"lg"} margin={"20px"} padding={"50px"} minHeight={"600px"}> 
 
-            <Text textAlign={"center"} fontSize={"25px"} fontWeight={"bold"} marginBottom={"10px"}>{`${pageType} ${userType}`}</Text>
+            <Text textAlign={"center"} fontSize={"25px"} fontWeight={"bold"} color={"sudoRed.900"}>{`${pageType} ${userType}`}</Text>
 
-                <FormControl marginBottom={"30px"} width={"200px"}>
-                    <FormLabel margin={0} color={"gray.600"} fontSize={"sm"} fontWeight={"light"}>User type</FormLabel>
-                    <Select name="type" value={userType} onChange={handleSelect} size={"sm"} borderRadius={3}>
+                <FormControl marginBottom={"10px"} width={"200px"}>
+                    <FormLabel margin={0} color={"gray.600"} fontSize={"md"} fontWeight={"light"}>User type</FormLabel>
+                    <Select name="type" value={userType} onChange={handleSelect} size={"md"} borderRadius={3}>
                         <option value={"user"}>user</option>
                         <option value={"Restaurant"}>restaurant</option>
                     </Select>

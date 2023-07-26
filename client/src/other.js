@@ -1,1 +1,1 @@
-export const MainURL = 'https://sudo-backend.onrender.com'
+export const MainURL = 'http://localhost:4000'

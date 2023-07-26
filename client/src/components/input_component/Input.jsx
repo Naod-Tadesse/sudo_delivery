@@ -13,24 +13,30 @@ const FormInput = ({name,type,value,handleChange,error,iconLeft,iconRight,label,
         handleChange(e)
     }
     return(
-        <FormControl marginTop={"0px"} marginBottom={"10px"} padding={"0px"}>
-            <FormLabel margin={0} color={"gray.600"} fontSize={"sm"} fontWeight={"light"}>{label && label}</FormLabel>
+        <FormControl marginTop={"0px"} minHeight={"75px"} padding={"0px"}>
+            <FormLabel margin={0} color={"gray.600"} fontSize={"md"} fontWeight={"light"}>{label && label}</FormLabel>
             <InputGroup>
                 {iconLeft && <InputLeftElement height={"100%"}><Icons icon = {iconLeft}/></InputLeftElement>  }
                 {iconRight && <InputLeftElement height={"100%"}><Icons icon = {iconRight}/></InputLeftElement>  }
                 
                 
                 <Input
+                    _focus={{borderWidth:"3px"}}
                     name={name} 
                     type={type} 
-                    placeholder={error ? error:name} 
+                    variant={"filled"}
+                    placeholder={name}
                     value={value} 
+                    bg={"cotton"}
                     onChange={change}
-                    fontSize="sm"
-                    size={"sm"}
+                    fontSize={"md"}
+                    size={"md"}
                     disabled={disabled}
-                    borderRadius={3}/>
+                    borderRadius={3}
+                    borderWidth={error ? "3px" : "2px"}
+                    borderColor={error ? "sudoRed.300" : "gray.500" }/>
             </InputGroup>
+            <Text fontSize={"md"} color={"sudoRed.900"}>{error && error}</Text>
         </FormControl>
     );
 };
@@ -41,20 +47,25 @@ export const FormInputPassword = ({name,value,handleChange,error,label})=>{
         handleChange(e)
     }
     return(
-        <FormControl marginTop={"0px"} marginBottom={"10px"}>
-            <FormLabel margin={0} color={"gray.600"} fontSize={"sm"} fontWeight={"light"}>{label && label}</FormLabel>
+        <FormControl marginTop={"0px"} marginBottom={"10px"} minHeight={"75px"}>
+            <FormLabel margin={0} color={"gray.600"} fontSize={"md"} fontWeight={"light"}>{label && label}</FormLabel>
             <InputGroup display={"flex"} justifyContent={"center"} >
                 <InputLeftElement height={"100%"}><Icons icon={"lock"} /></InputLeftElement>
                 
                 <Input
+                    _focus={{borderWidth:"3px"}}
                     name={name} 
                     type={showPassword ? "text" : "password"} 
-                    placeholder={error ? error : name} 
+                    variant={"filled"}
+                    bg={"cotton"}
+                    placeholder={name}
                     value={value} 
                     onChange={change}
-                    fontSize="sm"
-                    size={"sm"}
+                    fontSize={"md"}
+                    size={"md"}
                     borderRadius={3}
+                    borderWidth={error ? "3px" : "2px"}
+                    borderColor={error ? "sudoRed.300" : "gray.500"}
                     />
 
                 <div onClick={toggleShowPassword}>
@@ -62,6 +73,7 @@ export const FormInputPassword = ({name,value,handleChange,error,label})=>{
                 </div>
 
             </InputGroup>
+            <Text fontSize={"md"} color={"sudoRed.900"}>{error && error}</Text>
         </FormControl>
     );
 }
