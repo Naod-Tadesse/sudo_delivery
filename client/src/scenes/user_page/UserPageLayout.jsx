@@ -16,6 +16,8 @@ import { SponsoredContent } from "../../components/sponsor";
 import { data } from "../../components/sponsor/data";
 import colors from "../../themes/colors";
 
+import Front from "../../../public/front.jpg"
+
 
 
 const UserPageLayout = () =>{
@@ -26,7 +28,7 @@ const UserPageLayout = () =>{
     return(
         <>
         <Nav/>
-        {isSmall && <Box display={"flex"} flexDirection={"column"} justifyContent={"space-between"} bgImage={"/front.jpg"} bgAttachment={"fixed"} bgRepeat={"repeat-y"}>
+        {isSmall && <Box display={"flex"} flexDirection={"column"} justifyContent={"space-between"} bgImage={"Front"} bgAttachment={"fixed"} bgRepeat={"repeat-y"}>
                 <Box padding={"10px"}>
                     <Outlet/>
                 </Box>
@@ -36,7 +38,7 @@ const UserPageLayout = () =>{
             </Box>}
 
         {isMedium && isStillMedium &&
-            <Grid templateColumns="repeat(9,1fr)" bgImage={"/front.jpg"} bgAttachment={"fixed"} bgRepeat={"repeat-y"}>
+            <Grid templateColumns="repeat(9,1fr)" bgImage={"Front"} bgAttachment={"fixed"} bgRepeat={"repeat-y"}>
                 <GridItem colSpan={6}>
                                
                     <Box>
@@ -53,7 +55,7 @@ const UserPageLayout = () =>{
             </Grid>}
             
         {isLarge &&
-            <Grid templateColumns="repeat(9,1fr)" bgImage={"/front.jpg"} bgAttachment={"fixed"} bgRepeat={"repeat-y"}>
+            <Grid templateColumns="repeat(9,1fr)" bgImage={"Front"} bgAttachment={"fixed"} bgRepeat={"repeat-y"}>
 
                 <GridItem colSpan={2}>
                     <SponsoredContent data={data}/>
