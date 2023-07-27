@@ -12,6 +12,10 @@ import {setLogin} from "../../slices/authSlice";
 
 import { MainURL } from "../../other";
 
+import {motion} from "framer-motion"
+
+import { Side } from "./Side";
+
 
 const Login = ()=>{
     const [pageType,setPageType] = useState("register")
@@ -21,6 +25,7 @@ const Login = ()=>{
     const [showToast] = useShowToast()
     const dispatch = useDispatch()
     const navigate = useNavigate();
+    const MotionText = motion(Text)
 
 
     const login = (formData)=>{
@@ -63,10 +68,16 @@ const Login = ()=>{
     }
 
     return(
-        <Box display={"flex"} width={"100%"}justifyContent={"center"} alignContent={"center"}>
-            <Box width={"600px"} boxShadow={"lg"} margin={"20px"} padding={"50px"} minHeight={"600px"}> 
+        <Box display={"flex"} width={"100%"} height={"100vh"} justifyContent={"space-between"} alignContent={"center"} backgroundImage={"./front.jpg"} backgroundPosition={"bottom left"}> 
 
-            <Text textAlign={"center"} fontSize={"25px"} fontWeight={"bold"} color={"sudoRed.900"}>{`${pageType} ${userType}`}</Text>
+            <Box width={"60%"} display={"flex"} justifyContent={"center"} flexDirection={"column"} marginLeft={"100px"} color={"sudoRed.900"}>
+                <Side/>
+            </Box>
+
+
+            <Box width={"450px"} boxShadow={"lg"} margin={"20px"} padding={"30px"} paddingTop={"10px"} height={"630px"} marginRight={"100px"} bg={"cotton"} borderRadius={"3px"}> 
+
+                <Text textAlign={"center"} fontSize={"20px"} fontWeight={"bold"} color={"sudoRed.900"}>{`${pageType} ${userType}`}</Text>
 
                 <FormControl marginBottom={"10px"} width={"200px"}>
                     <FormLabel margin={0} color={"gray.600"} fontSize={"md"} fontWeight={"light"}>User type</FormLabel>

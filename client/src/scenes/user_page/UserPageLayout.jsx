@@ -26,7 +26,7 @@ const UserPageLayout = () =>{
     return(
         <>
         <Nav/>
-        {isSmall && <Box display={"flex"} flexDirection={"column"} justifyContent={"space-between"} height={"100vh"}>
+        {isSmall && <Box display={"flex"} flexDirection={"column"} justifyContent={"space-between"} bgImage={"./front.jpg"} bgAttachment={"fixed"} bgRepeat={"repeat-y"}>
                 <Box padding={"10px"}>
                     <Outlet/>
                 </Box>
@@ -36,7 +36,7 @@ const UserPageLayout = () =>{
             </Box>}
 
         {isMedium && isStillMedium &&
-            <Grid templateColumns="repeat(9,1fr)" height={"100vh"}>
+            <Grid templateColumns="repeat(9,1fr)" bgImage={"./front.jpg"} bgAttachment={"fixed"} bgRepeat={"repeat-y"}>
                 <GridItem colSpan={6}>
                                
                     <Box>
@@ -53,7 +53,7 @@ const UserPageLayout = () =>{
             </Grid>}
             
         {isLarge &&
-            <Grid templateColumns="repeat(9,1fr)" height={"100vh"}>
+            <Grid templateColumns="repeat(9,1fr)" bgImage={"./front.jpg"} bgAttachment={"fixed"} bgRepeat={"repeat-y"}>
 
                 <GridItem colSpan={2}>
                     <SponsoredContent data={data}/>
@@ -62,14 +62,14 @@ const UserPageLayout = () =>{
 
                 <GridItem colSpan={5}>
                     
-                    <Box height={"100%"}>
+                    <Box>
                         <Outlet/>
                     </Box>
                     
                 </GridItem>
 
                 <GridItem colSpan={2} height={"100%"}>
-                    <Box position={"sticky"} top={"0px"} padding={"10px"} boxShadow={"lg"} margin={"10px"} border={`solid 1px ${colors.sudoGray[100]}`}>
+                    <Box position={"sticky"} top={"0px"} padding={"10px"} boxShadow={"lg"} bg={"cotton"} margin={"10px"} border={`solid 1px ${colors.sudoGray[100]}`}>
                         <CartOrders/>
                     </Box>
                 </GridItem>

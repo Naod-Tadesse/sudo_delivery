@@ -29,28 +29,31 @@ const Foods = () => {
   },[])
 
   return (
-    <>
-    <SearchSort/>
-      <Flex flexDirection={"column"}>
-        {isLoading && <Spinner size={"xl"} alignSelf={"center"} />}
-        <Box display={"flex"} width={"100%"} justifyContent={"flex-start"} marginBottom={"20px"}>
-          <AddFood editing={false} width={"200px"}/>
-        </Box>
-        
-        <Box overflow={"auto"} className={"custom"}>
-          {response && 
-          <SimpleGrid spacing={10} minChildWidth="200px" height={"100%"}>
-            
-            { response.foods.map((food) => (
-              <MenuItem key={food._id} id={food._id} {...food} />
-            ))}
-          </SimpleGrid>}
-          <ButtonPagination numberOfPages={response && response.numOfPages}/> 
-        </Box>
+        <>
+          <Box position={"sticky"} top={"10px"} zIndex={1}>
+            <SearchSort/>
+            <Box display={"flex"} width={"100%"} justifyContent={"flex-start"} marginBottom={"20px"}>
+                <AddFood editing={false} width={"200px"}/>
+            </Box>
+          </Box>
+          <Flex flexDirection={"column"}>
+            {isLoading && <Spinner size={"xl"} alignSelf={"center"} />}
 
-        {error && <Text>{error.message}</Text>}
-      </Flex>
-    </>
+            
+            <Box overflow={"auto"} className={"custom"}>
+              {response && 
+              <SimpleGrid spacing={10} minChildWidth="200px" height={"100%"}>
+                
+                { response.foods.map((food) => (
+                  <MenuItem key={food._id} id={food._id} {...food} />
+                ))}
+              </SimpleGrid>}
+              <ButtonPagination numberOfPages={response && response.numOfPages}/> 
+            </Box>
+
+            {error && <Text>{error.message}</Text>}
+          </Flex>
+        </>
   );
 };
 

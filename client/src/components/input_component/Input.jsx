@@ -13,8 +13,8 @@ const FormInput = ({name,type,value,handleChange,error,iconLeft,iconRight,label,
         handleChange(e)
     }
     return(
-        <FormControl marginTop={"0px"} minHeight={"75px"} padding={"0px"}>
-            <FormLabel margin={0} color={"gray.600"} fontSize={"md"} fontWeight={"light"}>{label && label}</FormLabel>
+        <FormControl marginTop={"0px"} minHeight={"70px"} padding={"0px"}>
+            <FormLabel margin={0} color={"gray.600"} fontSize={"sm"} fontWeight={"light"}>{label && label}</FormLabel>
             <InputGroup>
                 {iconLeft && <InputLeftElement height={"100%"}><Icons icon = {iconLeft}/></InputLeftElement>  }
                 {iconRight && <InputLeftElement height={"100%"}><Icons icon = {iconRight}/></InputLeftElement>  }
@@ -29,14 +29,14 @@ const FormInput = ({name,type,value,handleChange,error,iconLeft,iconRight,label,
                     value={value} 
                     bg={"cotton"}
                     onChange={change}
-                    fontSize={"md"}
-                    size={"md"}
+                    fontSize={"sm"}
+                    size={"sm"}
                     disabled={disabled}
                     borderRadius={3}
-                    borderWidth={error ? "3px" : "2px"}
+                    borderWidth={error ? "2px" : "1px"}
                     borderColor={error ? "sudoRed.300" : "gray.500" }/>
             </InputGroup>
-            <Text fontSize={"md"} color={"sudoRed.900"}>{error && error}</Text>
+            <Text fontSize={"sm"} color={"sudoRed.900"}>{error && error}</Text>
         </FormControl>
     );
 };
@@ -47,8 +47,8 @@ export const FormInputPassword = ({name,value,handleChange,error,label})=>{
         handleChange(e)
     }
     return(
-        <FormControl marginTop={"0px"} marginBottom={"10px"} minHeight={"75px"}>
-            <FormLabel margin={0} color={"gray.600"} fontSize={"md"} fontWeight={"light"}>{label && label}</FormLabel>
+        <FormControl marginTop={"0px"} minHeight={"70px"}>
+            <FormLabel margin={0} color={"gray.600"} fontSize={"sm"} fontWeight={"light"}>{label && label}</FormLabel>
             <InputGroup display={"flex"} justifyContent={"center"} >
                 <InputLeftElement height={"100%"}><Icons icon={"lock"} /></InputLeftElement>
                 
@@ -61,10 +61,10 @@ export const FormInputPassword = ({name,value,handleChange,error,label})=>{
                     placeholder={name}
                     value={value} 
                     onChange={change}
-                    fontSize={"md"}
-                    size={"md"}
+                    fontSize={"sm"}
+                    size={"sm"}
                     borderRadius={3}
-                    borderWidth={error ? "3px" : "2px"}
+                    borderWidth={error ? "2px" : "1px"}
                     borderColor={error ? "sudoRed.300" : "gray.500"}
                     />
 
@@ -73,7 +73,7 @@ export const FormInputPassword = ({name,value,handleChange,error,label})=>{
                 </div>
 
             </InputGroup>
-            <Text fontSize={"md"} color={"sudoRed.900"}>{error && error}</Text>
+            <Text fontSize={"sm"} color={"sudoRed.900"}>{error && error}</Text>
         </FormControl>
     );
 }
@@ -87,14 +87,15 @@ export const FormInputSearch = ({handleSearch})=>{
         e.preventDefault()
         handleSearch(formState)
     }
-    const MotionFormControl = motion(FormControl)
+    const MotionInputGroup = motion(InputGroup)
     return(
         <form onSubmit={search}>
             <FormControl p={0}>
-                <InputGroup>
-                    <Input type={"text"} value={formState} placeholder="search..." onChange={handleChange} borderRadius={3}/>
-                    <InputRightElement ><Button variant={"link"} type={"submit"}><SearchIcon/></Button></InputRightElement>
-                </InputGroup>
+                <MotionInputGroup borderRadius={3} >
+                    <Input type={"text"} value={formState} placeholder="search..." onChange={handleChange}  
+                            variant={"filled"} bg={"cotton"} _hover={{boxShadow:"lg"}} _focus={{border:"none",boxShadow:"lg", width:"100%",bg:"cotton"}}/>
+                    <InputLeftElement ><Button variant={"link"} type={"submit"}><SearchIcon/></Button></InputLeftElement>
+                </MotionInputGroup>
             </FormControl>
         </form>
     )

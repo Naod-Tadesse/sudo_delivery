@@ -21,8 +21,8 @@ export const ButtonPagination = ({numberOfPages}) =>{
     
     return(
         <Flex paddingTop={10} paddingBottom={10} width={"100%"} justifyContent={"space-around"}>
-            <IconButton variant={"link"} onClick={handlePrevPage} isDisabled={page === 1} color={"sudoRed.900"}><ChevronLeftIcon boxSize={7}/></IconButton>
-            <IconButton variant={"link"} onClick={handleNextPage} isDisabled={numberOfPages <= page || numberOfPages === null} color={"sudoRed.900"}><ChevronRightIcon boxSize={7}/></IconButton>
+            <IconButton variant={"link"} onClick={handlePrevPage} isDisabled={page === 1} color={"sudoRed.900"}><ChevronLeftIcon boxSize={10}/></IconButton>
+            <IconButton variant={"link"} onClick={handleNextPage} isDisabled={numberOfPages <= page || numberOfPages === null} color={"sudoRed.900"}><ChevronRightIcon boxSize={10}/></IconButton>
        </Flex>
     )
 }

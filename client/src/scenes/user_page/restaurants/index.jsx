@@ -32,8 +32,9 @@ const Restaurants= () => {
 
     return(
         <> 
+        <SearchSort/>
         <Box overflow={"auto"} height={"100%"} marginTop={"10px"}>
-            <SearchSort/>
+            
             <Box>
                 <RestaurantList isLoading={isLoading} response={response && response} error={error && error}/>
                 <ButtonPagination numberOfPages={response && response.numOfPages} /> 

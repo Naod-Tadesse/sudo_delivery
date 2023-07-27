@@ -20,20 +20,20 @@ const SearchSort = ()=>{
     }
 
     return(
-    <>
-        <SearchForm handleSearch={handleSearch}/>
-        <Box paddingBottom={2}>
-            <Button 
-                bg={"none"} borderBottom={sort === "a-z" ? `solid ${colors.sudoRed[900]} 3px` : "none"} paddingBottom={sort === "a-z" ? "1px" : "4px"}
-                borderRadius={"none"} size={"sm"} fontWeight={"light"} onClick={()=>handleSort("a-z")}>A-Z</Button>
-            <Button 
-                bg={"none"} borderBottom={sort === "z-a" ? `solid ${colors.sudoRed[900]} 3px` : "none"} paddingBottom={sort === "z-a" ? "1px" : "4px"}
-                borderRadius={"none"} size={"sm"} fontWeight={"light"} onClick={()=>handleSort("z-a")}>Z-A</Button>
-            <Button 
-                bg={"none"} borderBottom={sort === "cheapest" ? `solid ${colors.sudoRed[900]} 3px` : "none"} paddingBottom={sort === "cheapest" ? "1px" : "4px"}
-                borderRadius={"none"} size={"sm"} fontWeight={"light"} onClick={()=>handleSort("cheapest")}>Cheapest</Button>
+        <Box position={"sticky"} top={"0px"} zIndex={1} bg={"cotton"} marginTop={"10px"} paddingTop={"20px"} padding={"10px"} boxShadow={"lg"} marginBottom={"20px"}>
+            <SearchForm handleSearch={handleSearch}/>
+            <Box paddingBottom={2} p={"5px"} >
+                <Button 
+                    bg={"none"} borderBottom={sort === "a-z" ? `solid ${colors.sudoRed[900]} 3px` : "none"} paddingBottom={sort === "a-z" ? "1px" : "4px"}
+                    borderRadius={"none"} size={"sm"} fontWeight={"light"} onClick={()=>handleSort("a-z")}>A-Z</Button>
+                <Button 
+                    bg={"none"} borderBottom={sort === "z-a" ? `solid ${colors.sudoRed[900]} 3px` : "none"} paddingBottom={sort === "z-a" ? "1px" : "4px"}
+                    borderRadius={"none"} size={"sm"} fontWeight={"light"} onClick={()=>handleSort("z-a")}>Z-A</Button>
+                <Button 
+                    bg={"none"} borderBottom={sort === "cheapest" ? `solid ${colors.sudoRed[900]} 3px` : "none"} paddingBottom={sort === "cheapest" ? "1px" : "4px"}
+                    borderRadius={"none"} size={"sm"} fontWeight={"light"} onClick={()=>handleSort("cheapest")}>Cheapest</Button>
+            </Box>
         </Box>
-    </>
     )
 }
 

@@ -32,9 +32,9 @@ const Foods = () => {
 
     return(
         <>
-        <Box overflow={"auto"} height={"100%"} marginTop={"10px"} className={"custom"}>
-            <SearchSort/>
+        <SearchSort/>
 
+        <Box overflow={"auto"} height={"800px"} marginTop={"10px"} className={"custom"}>
             <Box display={"flex"} flexDirection={"column"} justifyContent={"space-between"}>
                 <FoodsList response={response && response} isLoading={isLoading && isLoading} error={error && error}/>
                 <ButtonPagination numberOfPages={response && response.numOfPages}/> 

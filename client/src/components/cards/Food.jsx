@@ -28,8 +28,8 @@ const Food = ({id,foodData}) =>{
 
     return(
 
-        <MotionCard bg="white" size="sm" maxWidth={isSmall ? "100%" :"250px"} minWidth={"200px"} borderRadius={"none"} boxShadow={"md"} 
-            initial={{scale:random,opacity:0.2,y:100}} animate={{scale:1,opacity:1,y:0}} transition={{type:"tween"}}  border={`solid 1px ${colors.sudoGray[100]}`} >
+        <MotionCard bg="white" size="sm" maxWidth={isSmall ? "100%" :"250px"} minWidth={"200px"} borderRadius={"5px"} boxShadow={"md"} 
+            initial={{scale:random,opacity:0.2,y:100}} animate={{scale:1,opacity:1,y:0}} transition={{type:"tween"}}  >
             <CardHeader>
                 <Flex gap={5} justifyContent={"center"}>
                     <Heading as="h3" size="sm">{foodData.name}</Heading>

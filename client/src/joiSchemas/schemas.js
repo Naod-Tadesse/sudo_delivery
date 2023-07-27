@@ -4,7 +4,7 @@ import Joi from "joi-browser";
 export const restaurantRegisterSchema = {
     restaurantName: Joi.string().min(2).max(50).required(),
     email: Joi.string().min(5).max(255).required(),
-    restaurantAddress:Joi.string().min(2,60).required(),
+    restaurantAddress:Joi.string().min(2).max(60).required(),
     password: Joi.string().min(7).max(1024).required(),
     phoneNumber: Joi.number().min(10).required()
 }

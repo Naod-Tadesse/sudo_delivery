@@ -16,6 +16,8 @@ import { Icons } from "../../../components/icon/Icon";
 import colors from "../../../themes/colors";
 import {useNavigate} from "react-router-dom";
 
+import {motion} from "framer-motion"
+
 const initialState = {
   name:"",
   price:'',
@@ -36,6 +38,7 @@ const AddFood = ({editing,foodName,foodPrice,foodIngredients,foodImages,foodId,f
   const [preview,setPreview] = useState(editing ? foodImages:[])
   const [previewLength,setPreviewLength] = useState(images.length)
   const { isOpen, onClose, onOpen } = useDisclosure();
+  const MotionButton = motion(Button)
 
   const handleChange = (e)=>{
     setFormState({...formState,[e.target.name]:e.target.value})
@@ -155,9 +158,16 @@ const AddFood = ({editing,foodName,foodPrice,foodIngredients,foodImages,foodId,f
 
   return (
     <>
-    <Button onClick={onOpen} size={"sm"} width={width} color={"cotton"} bg={"sudoRed.900"} borderRadius={3} _hover={{bg:"sudoRed.400"}} >
-        {editing? <Icons icon={"pencil"} color={colors.cotton}/> : "Add Food"}
-    </Button>
+    {editing ? 
+      <Button onClick={onOpen} size={"sm"} width={width} color={"cotton"} bg={"sudoRed.900"} borderRadius={3} _hover={{bg:"sudoRed.400"}} >
+        <Icons icon={"pencil"} color={colors.cotton}/>
+      </Button>
+    
+    : 
+    <Button onClick={onOpen} height={"50px"} bg={"cotton"} color={"sudoRed.900"} _hover={{boxShadow:"xl",opacity:".6"}} boxShadow={"sm"} >
+        Add item
+    </Button>}
+
     <Modal isOpen={isOpen} onClose={close} isCentered={"true"} size={"2xl"}>
         <ModalOverlay>
           <ModalBody>

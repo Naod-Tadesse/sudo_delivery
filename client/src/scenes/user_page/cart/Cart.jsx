@@ -34,7 +34,7 @@ const Cart = () =>{
     }
     return(
         <Box padding={"10px"}>
-            <Box minHeight={400} overflow={"auto"}>
+            <Box height={"400px"} overflow={"auto"} className="orders">
                 {items.length < 1 ?
                 <Flex justifyContent={"center"} alignItems={"center"} height={400}>
                     <Text fontSize={30} color={"gray.300"}>looks like cart is empty</Text>

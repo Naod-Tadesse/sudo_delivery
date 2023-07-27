@@ -23,8 +23,8 @@ const Navbar = ()=>{
     }
     
     return(
-            <Flex as="nav" alignItems="center" p="10px 50px" boxShadow={"md"} bg={"sudoRed.900"}>
-                <Heading color={"cotton"} fontSize={20}>
+            <Flex as="nav" alignItems="center" p="10px 50px" boxShadow={"md"} bg={"cotton"}>
+                <Heading color={"sudoRed.900"} fontSize={20}>
                   <NavLink to="/">Sudo</NavLink>
                 </Heading>
               <Spacer />
@@ -34,10 +34,10 @@ const Navbar = ()=>{
                         <Box p={"10px"} _hover={{bg:"sudoGray.100",cursor:"pointer"}} onClick={handleLogout}>Logout</Box>
                     </MenuList>
                     <HStack>
-                      <Text color={"cotton"}>{user.username}</Text>
+                      <Text color={"sudoRed.900"}>{user.username}</Text>
                       <MenuButton borderRadius={0}>
-                        <Avatar name={user.username} src={`${MainURL}/api/userProfileImages/${user.profilePicture}`} size="md" bg={"cotton"} color={"sudoRed.900"}>
-                            <AvatarBadge width={"1em"} height={"1em"} bg={"sudoGreen.500"} borderColor={"sudoRed.900"}>
+                        <Avatar name={user.username} src={`${MainURL}/api/userProfileImages/${user.profilePicture}`} size="md" bg={"sudoRed.900"} color={"cotton"}>
+                            <AvatarBadge width={"1em"} height={"1em"} bg={"sudoGreen.500"} borderColor={"cotton"}>
 
                             </AvatarBadge>
                         </Avatar>
