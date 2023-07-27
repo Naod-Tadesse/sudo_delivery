@@ -31,7 +31,7 @@ const RestaurantLayout = () => {
         </Box>}
 
     {isMedium && isStillMedium &&
-        <Grid templateColumns="repeat(9,1fr)" bgImage={"./front.jpg"} bgAttachment={"fixed"} bgRepeat={"repeat-y"}>
+        <Grid templateColumns="repeat(9,1fr)" bgImage={"/front.jpg"} bgAttachment={"fixed"} bgRepeat={"repeat-y"}>
             <GridItem colSpan={6}>
                           
                 <Box p={"10px"} height={"100%"}>
@@ -48,7 +48,7 @@ const RestaurantLayout = () => {
         </Grid>}
         
     {isLarge &&
-        <Grid templateColumns="repeat(9,1fr)" bgImage={"./front.jpg"} bgAttachment={"fixed"} bgRepeat={"repeat-y"}>
+        <Grid templateColumns="repeat(9,1fr)" bgImage={"/front.jpg"} bgAttachment={"fixed"} bgRepeat={"repeat-y"}>
             <GridItem colSpan={2} p={"10px"} height={"100%"}>
                 <Box position={"sticky"} top={"10px"}>
                     <Orders/>
