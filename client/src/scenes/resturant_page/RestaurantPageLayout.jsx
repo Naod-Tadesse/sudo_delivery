@@ -10,6 +10,8 @@ import { SponsoredContent } from "../../components/sponsor";
 
 import Footer from "./footer";
 
+import Front from "../../../public/front.jpg"
+
 const RestaurantLayout = () => {
 
     const [isSmall,isMedium,isStillMedium,isLarge] = useMediaQuery(['(max-width: 768px)','(min-width: 768px)','(max-width: 1000px)','(min-width: 1000px)'])
@@ -21,7 +23,7 @@ const RestaurantLayout = () => {
   return (
     <>
     <Nav/>
-    {isSmall && <Box height={"90vh"} display={"flex"} justifyContent={"space-between"} flexDirection={"column"} bgImage={"./front.jpg"} bgAttachment={"fixed"} bgRepeat={"repeat-y"}>
+    {isSmall && <Box height={"90vh"} display={"flex"} justifyContent={"space-between"} flexDirection={"column"} bgImage={"Front"} bgAttachment={"fixed"} bgRepeat={"repeat-y"}>
         <Box padding={"10px"}>
             <Outlet/>
         </Box>
@@ -31,7 +33,7 @@ const RestaurantLayout = () => {
         </Box>}
 
     {isMedium && isStillMedium &&
-        <Grid templateColumns="repeat(9,1fr)" bgImage={"/front.jpg"} bgAttachment={"fixed"} bgRepeat={"repeat-y"}>
+        <Grid templateColumns="repeat(9,1fr)" bgImage={"Front"} bgAttachment={"fixed"} bgRepeat={"repeat-y"}>
             <GridItem colSpan={6}>
                           
                 <Box p={"10px"} height={"100%"}>
@@ -48,7 +50,7 @@ const RestaurantLayout = () => {
         </Grid>}
         
     {isLarge &&
-        <Grid templateColumns="repeat(9,1fr)" bgImage={"/front.jpg"} bgAttachment={"fixed"} bgRepeat={"repeat-y"}>
+        <Grid templateColumns="repeat(9,1fr)" bgImage={"Front"} bgAttachment={"fixed"} bgRepeat={"repeat-y"}>
             <GridItem colSpan={2} p={"10px"} height={"100%"}>
                 <Box position={"sticky"} top={"10px"}>
                     <Orders/>
