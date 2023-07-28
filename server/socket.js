@@ -16,7 +16,7 @@ class SocketRealtime {
 
     const io = new Server(server, {
       cors: {
-        origin: "https://sudo-delivery-1r5t.vercel.app",
+        origin: "https://sudo-delivery-frontend.vercel.app/",
       },
     });
 
