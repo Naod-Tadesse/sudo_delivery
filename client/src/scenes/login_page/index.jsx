@@ -68,7 +68,7 @@ const Login = ()=>{
     }
 
     return(
-        <Box display={"flex"} width={"100%"} height={"100vh"} justifyContent={"space-between"} alignContent={"center"} backgroundImage={"Front"} backgroundPosition={"bottom left"}> 
+        <Box display={"flex"} width={"100%"} height={"100vh"} justifyContent={"space-between"} alignContent={"center"} backgroundImage={"/front.jpg"} backgroundPosition={"bottom left"}> 
 
             <Box width={"60%"} display={"flex"} justifyContent={"center"} flexDirection={"column"} marginLeft={"100px"} color={"sudoRed.900"}>
                 <Side/>
