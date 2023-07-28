@@ -31,7 +31,7 @@ for (item in customEnv) {
 }
 
 const corsOptions = {
-  origin: 'https://sudo-delivery-frontend.vercel.app/',
+  origin: 'https://sudo-delivery-frontend.vercel.app',
   exposedHeaders: ["x-auth-token"]
 };
 app.use(cors(corsOptions));
