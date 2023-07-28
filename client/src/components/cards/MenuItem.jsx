@@ -23,7 +23,7 @@ const MenuItem = ({ _id, name, image, ingredients, price, description}) => {
       </CardHeader>
 
       <Box height={"150px"} display={"flex"} alignItems={"center"} bg={"gray.100"} overflow={"hidden"}>
-          <Image src={`${MainURL}/api/foodImage/${image[0]}`} width={"100%"} height={"100%"} fit={"cover"}/>
+          <Image src={image[0]} width={"100%"} height={"100%"} fit={"cover"}/>
       </Box>
 
       <CardBody color="gray.400" fontSize="13px">
