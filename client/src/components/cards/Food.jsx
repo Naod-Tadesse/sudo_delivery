@@ -36,7 +36,7 @@ const Food = ({id,foodData}) =>{
                 </Flex>
             </CardHeader>
             <Box height={"150px"} display={"flex"} alignItems={"center"} bg={"gray.100"} overflow={"hidden"}>
-                <Image src={`${MainURL}/api/foodImage/${foodData.image[0]}`} width={"100%"} height={"100%"} fit={"cover"}/>
+                <Image src={foodData.image[0]} width={"100%"} height={"100%"} fit={"cover"}/>
             </Box>
             <Spacer/>
             <CardBody color={"gray.400"} fontSize={"13px"}>
