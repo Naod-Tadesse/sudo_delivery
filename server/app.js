@@ -18,7 +18,7 @@ const restaurants_route = require("./routes/restaurants_route");
 const foods_route = require("./routes/foods_route");
 const profiles_route = require("./routes/profiles_route");
 const order_route = require("./routes/order_route");
-
+const {cloudinaryConfig}=require("./utilities/cloudinaryConfig")
 //initiate socket connection with server
 socketRealtime.connect(server);
 
@@ -39,7 +39,7 @@ app.use(cors(corsOptions));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(morgan("tiny"));
-
+app.use('*', cloudinaryConfig)
 // Routes
 app.get("/", (req, res) => {
   res.send("hello")

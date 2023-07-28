@@ -2,19 +2,28 @@ const multer = require("multer");
 const path = require("path");
 
 //setup disk storage
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, "./storage/" + req.params.type);
-  },
-  filename: (req, file, cb) => {
-    let parsedFileName = path.parse(file.originalname).name;
-    parsedFileName = parsedFileName.split(" ").join("_");
-    let filename =
-      Date.now() + "--" + parsedFileName + path.extname(file.originalname);
-    cb(null, filename);
-  },
-});
+// const storage = multer.diskStorage({
+//   destination: (req, file, cb) => {
+//     cb(null, "./storage/" + req.params.type);
+//   },
+//   filename: (req, file, cb) => {
+//     let parsedFileName = path.parse(file.originalname).name;
+//     parsedFileName = parsedFileName.split(" ").join("_");
+//     let filename =
+//       Date.now() + "--" + parsedFileName + path.extname(file.originalname);
+//     cb(null, filename);
+//   },
+// });
 
+const storage = multer.diskStorage({
+  filename: (req, file, cb) => {
+        let parsedFileName = path.parse(file.originalname).name;
+        parsedFileName = parsedFileName.split(" ").join("_");
+        let filename =
+          Date.now() + "--" + parsedFileName + path.extname(file.originalname);
+        cb(null, filename);
+      }
+})
 //filter files to upload
 const fileFilter = (req, file, cb) => {
   if (

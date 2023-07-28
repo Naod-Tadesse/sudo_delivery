@@ -26,7 +26,7 @@ const {
 
 router
   .route("/user/profile/editProfile")
-  .put(isUserAuthorized,storageSetup(type="userProfileImages"),upload.array("profilePicture", 15), parse,editUserProfile);
+  .put(isUserAuthorized,upload.single("profilePicture"), parse,editUserProfile);
 
 router
   .route("/user/profile/deleteProfile")
@@ -34,7 +34,7 @@ router
 
 router
   .route("/restaurant/profile/editProfile")
-  .put(isRestaurantAuthorized,storageSetup(type="restaurantProfileImages"),upload.array("profilePicture", 15), parse,editRestaurantProfile);
+  .put(isRestaurantAuthorized,upload.single("profilePicture"), parse,editRestaurantProfile);
 
 router
   .route("/restaurant/profile/deleteProfile")
