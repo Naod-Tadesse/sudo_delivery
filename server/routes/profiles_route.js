@@ -26,7 +26,7 @@ const {
 
 router
   .route("/user/profile/editProfile")
-  .put(isUserAuthorized,upload.single("profilePicture"), parse,editUserProfile);
+  .put(isUserAuthorized,upload.array("profilePicture", 15), parse,editUserProfile);
 
 router
   .route("/user/profile/deleteProfile")
@@ -34,7 +34,7 @@ router
 
 router
   .route("/restaurant/profile/editProfile")
-  .put(isRestaurantAuthorized,upload.single("profilePicture"), parse,editRestaurantProfile);
+  .put(isRestaurantAuthorized,upload.array("profilePicture",15), parse,editRestaurantProfile);
 
 router
   .route("/restaurant/profile/deleteProfile")
