@@ -85,3 +85,15 @@ exports.verifyOrder = async (req, res) => {
   await orderTobeVerified.save();
   res.status(200).json({message: "successful"})
 };
+
+exports.getOrdersUser = async (req, res) => {
+  const ordersBySingleUser = await Order.findOne({
+    user: req.user._id,
+    orderDelivered: false
+  })
+  if (!ordersBySingleUser){
+    return res.status(400).send("no orders pending")
+}
+  
+  res.status(200).json({orders: ordersBySingleUser})
+};
