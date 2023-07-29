@@ -33,7 +33,7 @@ exports.orderFood = async (req, res) => {
   }
 
   // Save order and notify restaurants of order using socket
-  req.body.food.map(async (singleOrder) => {
+  for (const singleOrder of req.body.food) {
     const food = await Food.findById(singleOrder.foodId);
     if (!food) return res.status(400).send("food not found");
     let order = new Order({
@@ -42,13 +42,13 @@ exports.orderFood = async (req, res) => {
       restaurant: food.restaurant,
       user: req.body.userId,
     });
-
+  
     await order.save();
     if (sessionRestaurants[food.restaurantId]) {
       connection.sendEventToSpecificUser("new order", order);
     }
-  });
-
+  }
+  
   res.send("order success");
 };
 
@@ -75,6 +75,10 @@ exports.verifyOrder = async (req, res) => {
     orderDelivered: false,
     user: req.user._id
   })
+  if (!orderTobeVerified){
+    console.log("orer", orderTobeVerified) 
+    return res.status(400).send("wring order id or no order registerd on database")
+}
   orderTobeVerified.set({
     orderDelivered: true
   })
