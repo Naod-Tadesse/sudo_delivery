@@ -87,7 +87,7 @@ exports.verifyOrder = async (req, res) => {
 };
 
 exports.getOrdersUser = async (req, res) => {
-  const ordersBySingleUser = await Order.findOne({
+  const ordersBySingleUser = await Order.find({
     user: req.user._id,
     orderDelivered: false
   })
