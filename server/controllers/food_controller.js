@@ -119,7 +119,7 @@ exports.getMenusForRestaurant = async (req, res) => {
     queryObject.name = { $regex: search, $options: "i" };
   }
 
-  let result = Food.find(queryObject);
+  let result = Food.find(queryObject).collation({ locale: 'en' });
 
   if (sort === "a-z") {
     result = result.sort("name");
@@ -155,7 +155,7 @@ exports.getUserFoods = async (req, res) => {
     queryObject.name = { $regex: search, $options: "i" };
   }
 
-  let result = Food.find(queryObject);
+  let result = Food.find(queryObject).collation({ locale: 'en' });
 
   if (sort === "a-z") {
     result = result.sort("name");
