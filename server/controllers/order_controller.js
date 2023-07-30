@@ -91,6 +91,9 @@ exports.getOrdersUser = async (req, res) => {
     user: req.user._id,
     orderDelivered: false
   })
+    .populate("restaurant","-password")
+    .populate("user", "-password")
+    .populate("food", "_id name price");
   if (!ordersBySingleUser){
     return res.status(400).send("no orders pending")
 }
