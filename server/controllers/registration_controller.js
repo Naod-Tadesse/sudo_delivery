@@ -24,8 +24,6 @@ exports.registerUser = async (req, res) => {
   //registering user
   user = new User(
     _.pick(req.body, [
-      "firstName",
-      "lastName",
       "username",
       "email",
       "password",
@@ -44,8 +42,6 @@ exports.registerUser = async (req, res) => {
     .send(
       _.pick(user, [
         "_id",
-        "firstName",
-        "lastName",
         "username",
         "email",
         "phoneNumber",

@@ -53,8 +53,6 @@ exports.userLogin = async (req, res) => {
     .send(
       _.pick(user, [
         "_id",
-        "firstName",
-        "lastName",
         "username",
         "email",
         "phoneNumber",
