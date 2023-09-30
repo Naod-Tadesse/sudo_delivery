@@ -66,7 +66,7 @@ exports.registerRestaurant = async (req, res) => {
 
   //registering restaurant
   restaurant = new Restaurant(
-    _.pick(req.body, ["name", "address", "email", "password", "phoneNumber", "description"])
+    _.pick(req.body, ["name", "location", "email", "password", "phoneNumber", "description"])
   );
   const salt = await bcrypt.genSalt(10);
   restaurant.password = await bcrypt.hash(restaurant.password, salt);
@@ -81,7 +81,7 @@ exports.registerRestaurant = async (req, res) => {
       _.pick(restaurant, [
         "_id",
         "name",
-        "address",
+        "location",
         "email",
         "phoneNumber",
         "profilePicture",
