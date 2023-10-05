@@ -14,11 +14,12 @@ class SocketRealtime {
   connect(server) {
     const { Server } = require("socket.io");
 
-    const io = new Server(server, {
-      cors: {
-        origin: "https://sudo-delivery-frontend.vercel.app",
-      },
-    });
+    const io = new Server(server)
+    //  {
+    //   // cors: {
+    //   //   // origin: "https://localhost:3000",
+    //   // },
+    // });
 
     //listener for connection and other events
     io.on("connection", (socket) => {
