@@ -44,7 +44,6 @@ function validateFoodObject(food) {
 //validating schema for storing food details
 function validateOrder(order) {
   const schema = Joi.object({
-    userId: Joi.objectId().required(),
     food: Joi.array(),
   });
   return schema.validate(order, { abortEarly: false });
