@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const { sessionRestaurants } = require("../socket");
 const { Food } = require("../models/food_model");
+const { User } = require("../models/user_model")
 const {
   Order,
   validateOrder,
@@ -11,10 +12,15 @@ exports.orderFood = async (req, res) => {
   // Initiating socket for realtime notification of order
   let connection = require("../socket.js").connection();
 
-  // Check for body's restaurants id and token's restaurant id are equal
-  if (req.body.userId != req.user._id) {
-    return res.status(400).send("incorrect token");
+  let user = await User.findById(req.user._id);
+  if(!user) {
+    return res.status(400).send("user does not exist")
   }
+
+  // Check for body's restaurants id and token's restaurant id are equal
+  // if (req.body.userId != req.user._id) {
+  //   return res.status(400).send("incorrect token");
+  // }
 
   //validating the food properties
   const { error } = validateOrder(req.body);
@@ -40,7 +46,7 @@ exports.orderFood = async (req, res) => {
       food: singleOrder.foodId,
       quantity: singleOrder.quantity,
       restaurant: food.restaurant,
-      user: req.body.userId,
+      user: user._id
     });
   
     await order.save();
