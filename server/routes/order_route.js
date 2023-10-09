@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const { orderFood, getOrders, verifyOrder, getOrdersUser } = require("../controllers/order_controller");
+const { orderFood, getOrders, verifyOrder, getOrdersUser, getAllUserOrders } = require("../controllers/order_controller");
 
 const {
   isUserAuthorized,
