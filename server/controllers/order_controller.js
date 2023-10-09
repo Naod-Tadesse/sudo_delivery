@@ -106,3 +106,17 @@ exports.getOrdersUser = async (req, res) => {
   
   res.status(200).json({orders: ordersBySingleUser})
 };
+
+exports.getAllUserOrders = async (req, res) => {
+  const AllOrdersBySingleUser = await Order.find({
+    user: req.user._id,
+  })
+    .populate("restaurant","-password")
+    .populate("user", "-password")
+    .populate("food", "_id name price");
+  if (!AllOrdersBySingleUser){
+    return res.status(400).send("no orders pending")
+  }
+  
+  res.status(200).json({orders: AllOrdersBySingleUser})
+}

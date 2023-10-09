@@ -97,7 +97,7 @@ email: 'kfc@gmail.com'
 
 # `/api/users/order`-- [post] --> to order food w
 
-`body: {food:[{foodId,quantity}],userId}`
+`body: {food:[{foodId,quantity}]}`
 ``header: [token]`
 
 # `/api/restaurants/orders`-- [get] --> to see orders w
@@ -106,3 +106,7 @@ email: 'kfc@gmail.com'
 
 # `/api/restaurants/orders/delivered`-- [post] -->
 ```body: foodId```
+
+# `/api/users/orders/history` -- [get] -->
+```header: [token]```
+
