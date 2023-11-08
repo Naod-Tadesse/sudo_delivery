@@ -96,7 +96,7 @@ exports.getCurrentUser = async (req, res) => {
   res.send(user);
 };
 
-exports.getCurrentRestaurant = async (req, res) => {
+exports. getCurrentRestaurant = async (req, res) => {
   //getting the current restaurant
   const restaurant = await Restaurant.findById(req.restaurant._id).select(
     "-password"
