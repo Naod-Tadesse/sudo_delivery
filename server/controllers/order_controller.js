@@ -40,7 +40,8 @@ exports.orderFood = async (req, res) => {
 
   // Save order and notify restaurants of order using socket
   for (const singleOrder of req.body.food) {
-    const food = await Food.findById(singleOrder.foodId);
+    const food = await Food.findById(singleOrder.foodId)
+    .populate("restaurant", "-password")
     if (!food) return res.status(400).send("food not found");
     let order = new Order({
       food: singleOrder.foodId,
@@ -50,8 +51,8 @@ exports.orderFood = async (req, res) => {
     });
   
     await order.save();
-    if (sessionRestaurants[food.restaurantId]) {
-      connection.sendEventToSpecificUser("new order", order);
+    if (sessionRestaurants[food.restaurant._id]) {
+      connection.sendEventToSpecificUser("new order", sessionRestaurants[food.restaurant._id],order);
     }
   }
   
@@ -106,3 +107,17 @@ exports.getOrdersUser = async (req, res) => {
   
   res.status(200).json({orders: ordersBySingleUser})
 };
+
+exports.getAllUserOrders = async (req, res) => {
+  const AllOrdersBySingleUser = await Order.find({
+    user: req.user._id,
+  })
+    .populate("restaurant","-password")
+    .populate("user", "-password")
+    .populate("food", "_id name price");
+  if (!AllOrdersBySingleUser){
+    return res.status(400).send("no orders pending")
+  }
+  
+  res.status(200).json({orders: AllOrdersBySingleUser})
+}
