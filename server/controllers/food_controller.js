@@ -92,7 +92,7 @@ exports.deleteFood = async (req, res) => {
 
 exports.getMenusForRestaurant = async (req, res) => {
   //  Query params restaurant holds the restaurant id only
-  let { restaurant, pageNumber, pageSize, sort, search } = req.query;
+  let { pageNumber, pageSize, sort, search } = req.query;
 
   // page number assignment
   pageNumber = Number(pageNumber) || 1;
@@ -102,12 +102,12 @@ exports.getMenusForRestaurant = async (req, res) => {
   if (!req.restaurant._id) return res.status(400).send("no token provided");
 
   // Check for body's restaurants id and token's restaurant id are equal
-  if (restaurant !== req.restaurant._id) {
-    return res.status(400).send("invalid restaurant id");
-  }
+  // if (restaurant !== req.restaurant._id) {
+  //   return res.status(400).send("invalid restaurant id");
+  // }
 
   // Check if restaurant exists
-  let restaurantsFound = await Restaurant.findById(restaurant);
+  let restaurantsFound = await Restaurant.findById(req.restaurant._id);
 
   // search for foods
   let restaurantFinder = _.pick(restaurantsFound, ["_id"]);

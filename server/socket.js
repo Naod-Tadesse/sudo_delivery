@@ -16,7 +16,7 @@ class SocketRealtime {
 
     const io = new Server(server, {
       cors: {
-        origin: "https://sudo-delivery-frontend.vercel.app",
+        //origin: "https://sudo-delivery-frontend.vercel.app",
       },
     });
 
@@ -28,8 +28,11 @@ class SocketRealtime {
       });
 
       this._socket.on("Restaurant connected", (token) => {
-        const restaurantId = verifyToken(token)._id;
-        sessionRestaurants[restaurantId] = socket.id;
+       try{ const restaurantId = verifyToken(token)._id;
+        sessionRestaurants[restaurantId] = socket.id;}
+        catch (error){
+          console.log('error', error)
+        }
       });
 
       this._socket.on("disconnect", (socket) => {

@@ -10,11 +10,18 @@ const restaurantSchema = new mongoose.Schema({
     minlength: 2,
     maxlength: 50,
   },
-  address: {
-    type: String,
-    required: true,
-    minlength: 2,
-    maxlength: 60,
+  location: {
+    longitude: {
+      type: Number,
+    },
+    latitude:{
+      type: Number
+    },
+    address: {
+      type: String,
+      minlength: 2,
+      maxlength: 60
+    }
   },
   email: {
     type: String,
@@ -57,7 +64,7 @@ function validateRestaurant(restaurant) {
   //validating schema for registering restaurant
   const schema = Joi.object({
     name: Joi.string().min(1).max(50).required(),
-    address: Joi.string().min(2).max(50).required(),
+    location: Joi.object().min(2).max(50),
     email: Joi.string().min(5).max(255).required().email(),
     password: Joi.string().min(5).max(255).required(),
     phoneNumber: Joi.string().min(10).required(),
