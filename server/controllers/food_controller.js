@@ -55,7 +55,7 @@ exports.editFood = async (req, res) => {
     });
   
   // Check for body's restaurants id and token's restaurant id are equal
-  if (req.restaurant._id) {
+  if (!req.restaurant._id) {
     return res.status(400).send("invalid restaurant id");
   }
   
