@@ -55,12 +55,12 @@ exports.editFood = async (req, res) => {
     });
   
   // Check for body's restaurants id and token's restaurant id are equal
-  if (req.body.restaurantId !== req.restaurant._id) {
+  if (req.restaurant._id) {
     return res.status(400).send("invalid restaurant id");
   }
   
   // Check if restaurant exists
-  let restaurant = await Restaurant.findById(req.body.restaurantId);
+  let restaurant = await Restaurant.findById(req.restaurant._id);
   if (!restaurant) return res.status(400).send("no restaurant registered");
 
   // Check if food exists
@@ -182,7 +182,6 @@ exports.getUserFoods = async (req, res) => {
 // Validating Schema for food update
 function validateFoodUpdate(body) {
   const schema = Joi.object({
-    restaurantId: Joi.objectId().required(),
     foodId: Joi.objectId().required(),
     changes: Joi.object().required(),
     image: Joi.array()
